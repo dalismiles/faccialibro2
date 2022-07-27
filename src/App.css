@@ -1,0 +1,27 @@
+.App__mainContent {
+  color: rgb(24, 24, 24);
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 0.9rem;
+}
+
+.App__friends {
+  color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.App_messages {
+  padding: 20px;
+  width: 400px;
+}
+
+@media (max-width: 767px) {
+  .App {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

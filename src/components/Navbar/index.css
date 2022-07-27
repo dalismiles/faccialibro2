@@ -1,0 +1,60 @@
+.Navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  padding: 25px 40px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 2px rgb(81, 80, 81);
+  color: lightseagreen;
+}
+
+.Navbar__socialName {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Navbar__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+}
+
+.Navbar__menu li {
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.Navbar__menu .friends:hover {
+  letter-spacing: 3px;
+}
+
+.Navbar__menu .liveStories:hover {
+  letter-spacing: 3px;
+}
+
+.Navbar__menu .profileSettings {
+  margin-bottom: 20px;
+  letter-spacing: 0;
+  font-style: italic;
+  font-size: small;
+  color: rgb(114, 114, 114);
+}
+
+.Navbar__menu .profileSettings:hover {
+  color: black;
+}
+
+.Navbar__menu .logOut {
+  margin-top: 10px;
+  letter-spacing: 0;
+  font-size: small;
+  color: rgb(114, 114, 114);
+}
+
+.Navbar__menu .logOut:hover {
+  color: black;
+}
