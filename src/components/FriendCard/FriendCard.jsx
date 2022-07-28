@@ -1,22 +1,19 @@
 import { DELETE } from "../../utils/api";
 import "./index.css";
 
-const FriendCard = ({ friendData, isRenderedList, onDeleteCard }) => {
+const FriendCard = ({ friendData, setRenderedList }) => {
   const { photo, name, id } = friendData;
 
-  const deleteFriend = () => {
-    DELETE("friends", id).then(() => onDeleteCard(!isRenderedList));
-  };
+  const deleteFriendBtn = (id) =>
+    DELETE("friends", id).then(() => setRenderedList((prev) => !prev));
 
   return (
     <div className="FriendCard">
-      <img
-        onClick={deleteFriend}
-        className="FriendCard__photo"
-        src={photo}
-        alt={name}
-      />
+      <img className="FriendCard__photo" src={photo} alt={name} />
       <p className="FriendCard__name">{name}</p>
+      <button onClick={() => deleteFriendBtn(id)} className="FriendCard__btn">
+        X
+      </button>
     </div>
   );
 };

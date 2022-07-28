@@ -42,7 +42,7 @@ const AddFriend = ({ isRenderedList, onAddButton }) => {
         onChange={(e) => setFriendName(e.target.value)}
         required
       />
-      <Button type="submit" btnTextContent="Aggiungi" color="lightseagreen" />
+      <Button type="submit" btnTextContent="Add Friend" color="lightseagreen" />
     </form>
   );
 };

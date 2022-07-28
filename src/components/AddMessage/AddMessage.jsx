@@ -1,52 +1,40 @@
-import { useState } from 'react';
-import { POST } from '../../utils/api.js';
+import { useState } from "react";
+import { POST } from "../../utils/api.js";
 
-import Button from '../Button';
-import './index.css';
+import Button from "../Button";
+import "./index.css";
 
 const AddMessage = ({ isRenderedList, onAddButton }) => {
-  // Controlled component!!! - Forms e input
-  const [messageText, setMessageText] = useState('');
-  const [sender, setSender] = useState('');
+  const [messageText, setMessageText] = useState("");
 
   const onFormSubmit = (e) => {
     e.preventDefault();
 
-    if (messageText && sender) {
-      POST('messages', {
+    if (messageText) {
+      POST("messages", {
         text: messageText,
-        sender: sender,
-        date: new Date().toLocaleDateString()
-      })
-      .then(() => {
-        setMessageText('');
-        setSender('');
+        sender: localStorage.getItem("username") || "Generic",
+        date: new Date().toLocaleDateString(),
+      }).then(() => {
+        setMessageText("");
         onAddButton(!isRenderedList);
-      })
+      });
     }
-  }
+  };
 
   return (
     <form className="AddMessage" onSubmit={onFormSubmit}>
       <input
         className="AddMessage__text"
         type="text"
-        placeholder="Scrivi il messaggio..."
-        value={ messageText }
+        placeholder="Type your message..."
+        value={messageText}
         onChange={(e) => setMessageText(e.target.value)}
         required
       />
-      <input
-        className="AddMessage__sender"
-        type="text"
-        placeholder="Autore..."
-        value={ sender }
-        onChange={(e) => setSender(e.target.value)}
-        required
-      />
-      <Button type="submit" btnTextContent='Invia' color='lightseagreen' />
+      <Button type="submit" btnTextContent="Post" color="lightseagreen" />
     </form>
-  )
-}
+  );
+};
 
 export default AddMessage;

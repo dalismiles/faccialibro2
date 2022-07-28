@@ -16,7 +16,7 @@ function App() {
       </div>
       <div className="App__mainContent">
         <div className="App__friends">
-          <h3>Lista degli amici</h3>
+          <h3>FRIENDS</h3>
           <FriendCardList
             isRenderedList={isRenderedList}
             onAddButton={setRenderedList}
