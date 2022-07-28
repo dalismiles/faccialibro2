@@ -1,5 +1,6 @@
 .FriendCard {
-  width: 180px;
+  height: 75px;
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +17,8 @@
 }
 
 .FriendCard__photo {
-  width: 75px;
+  height: 75px;
+  width: 40%;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -44,8 +46,5 @@
 .FriendCard__btn:hover {
   color: #f08080;
   border: 3px solid #f08080;
-}
-
-.FriendCard__btn:active {
   background-color: #f08080;
 }

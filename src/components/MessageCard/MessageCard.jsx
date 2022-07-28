@@ -16,7 +16,7 @@ const MessageCard = ({ textContent, isRenderedList, onDeleteBtn }) => {
         onClick={() => setModalVisibility(true)}
         className="MessageCard__delete"
       >
-        X
+        delete
       </button>
       <p className="MessageCard__text">{textContent.text}</p>
       <div className="MessageCard__info">
@@ -25,7 +25,8 @@ const MessageCard = ({ textContent, isRenderedList, onDeleteBtn }) => {
       </div>
       {isModalVisibile && (
         <Modal
-          modalTextContent="Vuoi cancellare il messaggio?"
+          modalMessageRecall={textContent.text}
+          modalTextContent="Are you sure you want to permanently remove this post?"
           onModalConfirm={onModalConfirm}
           setModalVisibility={setModalVisibility}
         />

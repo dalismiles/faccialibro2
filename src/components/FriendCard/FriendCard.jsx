@@ -12,7 +12,6 @@ const FriendCard = ({ friendData, setRenderedList }) => {
       <img className="FriendCard__photo" src={photo} alt={name} />
       <p className="FriendCard__name">{name}</p>
       <button onClick={() => deleteFriendBtn(id)} className="FriendCard__btn">
-        X
       </button>
     </div>
   );

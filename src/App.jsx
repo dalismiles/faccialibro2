@@ -15,8 +15,8 @@ function App() {
         <Navbar />
       </div>
       <div className="App__mainContent">
-        <div className="App__friends">
-          <h3>FRIENDS</h3>
+        <section className="App__friends">
+          
           <FriendCardList
             isRenderedList={isRenderedList}
             onAddButton={setRenderedList}
@@ -25,8 +25,8 @@ function App() {
             isRenderedList={isRenderedList}
             onAddButton={setRenderedList}
           />
-        </div>
-        <div className="App_messages">
+        </section>
+        <section className="App_messages">
           <AddMessage
             isRenderedList={isRenderedList}
             onAddButton={setRenderedList}
@@ -35,7 +35,7 @@ function App() {
             isRenderedList={isRenderedList}
             setRenderedList={setRenderedList}
           />
-        </div>
+        </section>
       </div>
     </div>
   );

@@ -11,24 +11,26 @@ const ModalLogin = ({ onHandleClick }) => {
   };
 
   return (
-    <div className="ModalLogin">
-      <form className="ModalLogin__form" onSubmit={onGetUsername}>
-        <h2>Type your name</h2>
-        <input
-          value={usernameInput}
-          onChange={(e) => setUsernameInput(e.target.value)}
-          className="ModalLogin__form--input"
-          type="text"
-          placeholder="Name ..."
-          required
-        />
-        <Button
-          type="submit"
-          color="lightseagreen"
-          btnTextContent="Continue"
-          className="ModalLogin__button"
-        />
-      </form>
+    <div className="ModalLogin__overlay">
+      <div className="ModalLogin">
+        <form className="ModalLogin__form" onSubmit={onGetUsername}>
+          <h2 className="ModalLogin__typewriter">WELCOME to CB.04!</h2>
+          <input
+            value={usernameInput}
+            onChange={(e) => setUsernameInput(e.target.value)}
+            className="ModalLogin__form--input"
+            type="text"
+            placeholder="Type your name here and continue..."
+            required
+          />
+          <Button
+            type="submit"
+            color="lightseagreen"
+            btnTextContent="Continue"
+            className="ModalLogin__button"
+          />
+        </form>
+      </div>
     </div>
   );
 };

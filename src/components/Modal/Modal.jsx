@@ -1,25 +1,43 @@
-import Button from '../Button';
-import './index.css';
+import Button from "../Button";
+import "./index.css";
 
-const Modal = ({modalTextContent, onModalConfirm, setModalVisibility}) => {
+const Modal = ({
+  modalTextContent,
+  modalMessageRecall,
+  onModalConfirm,
+  setModalVisibility,
+}) => {
   const onConfirmBtn = () => {
     onModalConfirm();
     setModalVisibility(false);
-  }
+  };
 
   const onCancelBtn = () => {
     setModalVisibility(false);
-  }
+  };
 
   return (
-    <div className="Modal">
-      <p>{ modalTextContent }</p>
-      <div className="Modal__btns">
-        <Button onHandleClick={onCancelBtn} btnTextContent="Annulla" color="lightcoral" type="button" />
-        <Button onHandleClick={onConfirmBtn} btnTextContent="Conferma" color="lightseagreen" type="button" />
+    <div className="Modal__overlay">
+      <div className="Modal">
+        <p className="Modal__messageRecall">{modalMessageRecall}</p>
+        <p className="Modal__TextContent">{modalTextContent}</p>
+        <div className="Modal__btns">
+          <Button
+            onHandleClick={onConfirmBtn}
+            btnTextContent="Yes, I am sure!"
+            color="lightseagreen"
+            type="button"
+          />
+          <Button
+            onHandleClick={onCancelBtn}
+            btnTextContent="No, I'll keep it!"
+            color="lightcoral"
+            type="button"
+          />
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Modal;

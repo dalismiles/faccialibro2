@@ -1,3 +1,7 @@
+.App {
+  font-family: Roboto;
+}
+
 .App__mainContent {
   background-color: aliceblue;
   color: rgb(24, 24, 24);
@@ -7,22 +11,29 @@
 }
 
 .App__friends {
-  color: lightgrey;
+  padding-top: 25px;
+  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  font-style: oblique;
+  font-size: larger;
+  color: whitesmoke;
+  background: rgba(32, 178, 171, 0.401);
 }
 
 .App_messages {
-  padding: 20px;
-  width: 400px;
+  padding: 25px;
+  width: 60%;
 }
 
 @media (max-width: 767px) {
   .App {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 }
+
