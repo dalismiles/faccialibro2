@@ -4,7 +4,7 @@ import MessageCard from "../MessageCard";
 import { GET } from "../../utils/api";
 import "./index.css";
 
-const MessageCardList = ({ isRenderedList, setRenderedList }) => {
+const MessageCardList = ({ isRenderedList, setRenderedList, filteredValue }) => {
   const [messageList, setMessageList] = useState([]);
 
   useEffect(() => {
@@ -18,14 +18,17 @@ const MessageCardList = ({ isRenderedList, setRenderedList }) => {
         onHandleClick={() => setRenderedList(!isRenderedList)}
       />
       {messageList.length ? (
-        messageList.map((message) => (
-          <MessageCard
-            isRenderedList={isRenderedList}
-            onDeleteBtn={setRenderedList}
-            textContent={message}
-            key={message.id}
-          />
-        ))
+        messageList
+          .reverse()
+          .filter((el)=>el.sender.toLowerCase().includes(filteredValue.toLowerCase()))
+          .map((message) => (
+            <MessageCard
+              isRenderedList={isRenderedList}
+              onDeleteBtn={setRenderedList}
+              textContent={message}
+              key={message.id}
+            />
+          ))
       ) : (
         <p>Loading...</p>
       )}

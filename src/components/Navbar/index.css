@@ -36,6 +36,15 @@
   letter-spacing: 3px;
 }
 
+.Navbar__menu .account {
+  margin-top: 10px;
+  letter-spacing: 0;
+  font-style: italic;
+  font-size: small;
+
+  color: rgb(4, 70, 78);
+}
+
 .Navbar__menu .profileSettings {
   margin-bottom: 20px;
   letter-spacing: 0;
@@ -49,7 +58,6 @@
 }
 
 .Navbar__menu .logOut {
-  margin-top: 10px;
   letter-spacing: 0;
   font-size: small;
   color: rgb(114, 114, 114);

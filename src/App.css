@@ -28,6 +28,13 @@
   width: 60%;
 }
 
+.App_messages--research {
+  padding: 25px;
+  width: 60%;
+  display: inline-block;
+  font-size: small;
+}
+
 @media (max-width: 767px) {
   .App {
     display: flex;
@@ -35,5 +42,22 @@
     justify-content: center;
     align-items: center;
   }
+
+  .Navbar
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .App__mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
 }
 

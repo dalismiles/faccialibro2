@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState } from "react";
 import "./index.css";
 import logo from "../../assets/images/logo.png";
 import ModalLogin from "../ModalLogin";
 
-
 const Navbar = () => {
-
   const [isModalVisibile, setModalVisibility] = useState(false);
+
+  const removeUsername = () => {
+    localStorage.removeItem("username");
+  };
 
   return (
     <div className="Navbar">
@@ -15,15 +17,26 @@ const Navbar = () => {
         <h1 className="App_name"> CB.04 SOCIAL CLUB</h1>
       </div>
       <ul className="Navbar__menu">
-        <li onClick={() => setModalVisibility(true)} className="profileSettings">Profile Settings</li>
+        <li
+          onClick={() => setModalVisibility(true)}
+          className="profileSettings"
+        >
+          LogIn/Settings
+        </li>
         <li className="friends">FRIENDS</li>
-        <li className="friends">MESSAGES</li>
+        <li className="messages">MESSAGES</li>
         <li className="liveStories">LIVE STORIES</li>
-        <li className="logOut">Log Out</li>
+        <li className="account">
+          <b>{localStorage.getItem("username") || "anonymous"} </b>
+        </li>
+        <li onClick={() => removeUsername(true)} className="logOut">
+          Log Out
+        </li>
       </ul>
-      { isModalVisibile && <ModalLogin setModalVisibility={setModalVisibility}/>}
+      {isModalVisibile && (
+        <ModalLogin setModalVisibility={setModalVisibility} />
+      )}
     </div>
-
   );
 };
 
