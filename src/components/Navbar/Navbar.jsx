@@ -27,9 +27,12 @@ const Navbar = () => {
         <li className="messages">MESSAGES</li>
         <li className="liveStories">LIVE STORIES</li>
         <li className="account">
-          <b>{localStorage.getItem("username") || "anonymous"} </b>
+          <b>HELLO {localStorage.getItem("username") || "anonymous"} !</b>
         </li>
-        <li onClick={() => removeUsername(true)} className="logOut">
+        <li
+          onClick={() => setModalVisibility(true) && removeUsername(true)}
+          className="logOut"
+        >
           Log Out
         </li>
       </ul>
